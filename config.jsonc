@@ -7,26 +7,26 @@
   "spacing" : 0,
   "modules-left": [ 
       "custom/appmenu", 
-      "tray",
       "hyprland/workspaces", 
       "custom/uptime" 
   ],
 
   "modules-center": [
-      "hyprland/window"
+      "clock"
+      //"hyprland/window"
   ],
 
   "modules-right": [ 
       "custom/music", 
       "custom/pomodoro", 
       "bluetooth", 
-      "backlight", 
+      "tray",
+      //"backlight", 
       "network",
       "custom/notification", 
       "pulseaudio",
       "power-profiles-daemon", 
       "battery", 
-      "clock" 
   ],
 
 
@@ -110,7 +110,7 @@
   "clock": {
     "tooltip": false,
     "format": "{:%I:%M %p}",
-    "format-alt": "{:%A, %B %d %Y}",
+    "format-alt": "{:%A, %b %d, %Y}",
     /*"format": "{:%:%M:%S  -  %A, %d}",*/
     "interval": 1
   },

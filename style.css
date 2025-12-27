@@ -20,7 +20,6 @@
 /* --- Left Modules (Individual, Fully Rounded Blocks - With Horizontal Spacing & Simple Hover) --- */
 #workspaces,
 #custom-uptime,
-#tray,
 #custom-appmenu,
 #cpu {
   background-color: @crust;

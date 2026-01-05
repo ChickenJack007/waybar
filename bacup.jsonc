@@ -1,9 +1,9 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-top": 1,
+  "margin-top": 0,
   "margin-left": 5,
-  "margin-right": 0,
+  "margin-right": 5,
   "spacing" : 0,
   "modules-left": [ 
       "custom/appmenu", 
@@ -23,7 +23,7 @@
       "tray",
       //"backlight", 
       "network",
-      "custom/notification",
+      "custom/notification", 
       "pulseaudio",
       "power-profiles-daemon", 
       "battery", 
@@ -192,5 +192,6 @@
 	"on-click": "waybar-module-pomodoro toggle",
 	"on-click-right": "waybar-module-pomodoro reset",
   },
+
 }
 

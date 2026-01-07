@@ -30,7 +30,7 @@ window#waybar {
 }
 .modules-left {
 	background-color: @bg;
-    margin: 2px 12px 0 0;
+    margin: 2px 12px 0 2;
 }
 /*-----modules indv----*/
 #workspaces button {

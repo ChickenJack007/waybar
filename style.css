@@ -1,7 +1,10 @@
 @import "theme.css";
 * {
     border: none;
-    font-family: Font Awesome, Roboto, Arial, sans-serif;
+
+    font-family: Font Awesome, Arial, MesloLGMDZ Nerd Font Propo, sans-serif;
+    /*font-family: Font Awesome, Arial, CommitMono Nerd Font Propo, sans-serif;*/
+    /*font-family: Font Awesome, Roboto, Arial, sans-serif;*/
     font-size: 12px;
     color: @text;
     border-radius: 20px;
@@ -59,7 +62,7 @@ window#waybar {
 #tray,
 #mode,
 #custom-power,
-#custom-notification, 
+/*#custom-notification, */
 #custom-appmenu,
 #idle_inhibitor {
     padding: 0 9;
@@ -72,7 +75,7 @@ window#waybar {
     font-weight: bold;
 }
 #custom-appmenu {
-  font-size: 14px;
+  font-size: 16px;
 } 
 
 #custom-power {

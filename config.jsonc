@@ -31,7 +31,7 @@
 
 
   "hyprland/workspaces": {
-    "format": "{name}: {icon}",
+    "format": "{name}:{icon}",
     "format-icons": {
       //"active": "",
       //"default": ""
@@ -41,11 +41,11 @@
     }
   },
   "tray": {
-      "icon-size": 16,
+      "icon-size": 14,
       "spacing": 8
   },
   "custom/appmenu": {
-    "format": "󰣇",
+    "format": "󰣇 ",
     "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings",
     "on-click": "rofi -show drun -replace & sleep 0.2; hyprctl dispatch focuswindow '^(Rofi)'",
     "on-click-right": "~/.config/notscripter/scripts/keybindings.sh",
@@ -78,7 +78,7 @@
 },
   "custom/notification": {
     "tooltip": true,
-    "format": "<span size='13pt'>{icon}</span>",
+    "format": "<span size='12pt'>{icon}</span>",
     "format-icons": {
       "notification": "󱅫",
       "none": "󰂜",
@@ -98,7 +98,7 @@
   },
 
   "custom/music": {
-    "format": "  {}",
+    "format": " {}",
     "escape": true,
     "interval": 5,
     "tooltip": false,
@@ -121,7 +121,8 @@
     "format-disconnected": "󰤠 ",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "nm-connection-editor"
+    /*"on-click": "nm-connection-editor"*/
+    "on-click": "~/.config/rofi/rofi-wifi-menu.sh"
 
  },
 
@@ -153,7 +154,7 @@
   },
   
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
 
     "format-muted": "",
     "format-icons": {
@@ -169,8 +170,8 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
-        "format-full": "{icon}  {capacity}%",
+        "format": "{icon}{capacity}%",
+        "format-full": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{icon} {time}",

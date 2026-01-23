@@ -8,12 +8,12 @@
   "modules-left": [ 
       "custom/appmenu", 
       "hyprland/workspaces", 
-      "custom/uptime" 
+      "custom/uptime",
+      "hyprland/window"
   ],
 
   "modules-center": [
       "clock"
-      //"hyprland/window"
   ],
 
   "modules-right": [ 
@@ -45,7 +45,7 @@
       "spacing": 8
   },
   "custom/appmenu": {
-    "format": "󰣇 ",
+    "format": "󰣇",
     "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings",
     "on-click": "rofi -show drun -replace & sleep 0.2; hyprctl dispatch focuswindow '^(Rofi)'",
     "on-click-right": "~/.config/notscripter/scripts/keybindings.sh",

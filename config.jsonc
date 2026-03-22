@@ -2,11 +2,12 @@
   "layer": "top",
   "position": "top",
   "margin-top": 1,
-  "margin-left": 5,
+  "margin-left": 0,
   "margin-right": 0,
   "spacing" : 0,
   "modules-left": [ 
-      "custom/appmenu", 
+      "group/log",
+      //"custom/appmenu", 
       "hyprland/workspaces", 
       "custom/uptime",
       "hyprland/window"
@@ -19,14 +20,10 @@
   "modules-right": [ 
       "custom/music", 
       "custom/pomodoro", 
-      "bluetooth", 
-      "tray",
-      //"backlight", 
-      "network",
-      "custom/notification",
+      ////"backlight", 
       "pulseaudio",
-      "power-profiles-daemon", 
-      "battery", 
+      "group/widget",
+      "battery"
   ],
 
 
@@ -42,7 +39,7 @@
   },
   "tray": {
       "icon-size": 14,
-      "spacing": 8
+      "spacing": 6
   },
   "custom/appmenu": {
     "format": "󰣇",
@@ -100,7 +97,7 @@
   "custom/music": {
     "format": " {}",
     "escape": true,
-    "interval": 5,
+    "interval": 1,
     "tooltip": false,
     "exec": "playerctl metadata --format='{{ title }} - {{ artist }}'",
     "on-click": "playerctl play-pause",
@@ -117,9 +114,10 @@
 
   "network": {
     "format-wifi": "󰤢",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤠",
     "interval": 5,
+    "tooltip": false,
     "tooltip-format": "{essid} ({signalStrength}%)",
     /*"on-click": "nm-connection-editor"*/
     "on-click": "~/.config/rofi/rofi-wifi-menu.sh"
@@ -158,13 +156,13 @@
 
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": ["", "", ""]
     },
-    "on-click": "kitty -e alsamixer"
+    //"on-click": "kitty -e alsamixer"
   },
 
   "battery": {
-        "interval":2,
+        "interval":1,
         "states": {
             // "good": 95,
             "warning": 30,
@@ -182,8 +180,10 @@
   
   "custom/lock": {
   "tooltip": false,
-  "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
-  "format" : ""
+  //"on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
+  "on-click": "wlogout",
+  //"format" : ""
+  "format": ""
   },
 
   "custom/pomodoro": {
@@ -193,5 +193,32 @@
 	"on-click": "waybar-module-pomodoro toggle",
 	"on-click-right": "waybar-module-pomodoro reset",
   },
+
+  "group/log": {
+     "orientation": "inherit",
+     "drawer": {
+         "transition-duration": 300,
+         //"children-class": "not-power",
+         "transition-left-to-right": true,
+     },
+     "modules": [
+         "custom/appmenu", // First element is the "group leader" and won't ever be hidden
+         "custom/lock"
+     ]
+  },
+  "group/widget": {
+    "orientation": "inherit",
+    "drawer": {
+    "transition-duration": 500,
+    "children-classs": "widget-drawer"
+    },
+    "modules":[
+      "custom/notification",
+      "tray",
+      "network",
+      "bluetooth",
+      "power-profiles-daemon"
+    ]
+  }
 }
 

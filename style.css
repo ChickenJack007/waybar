@@ -2,9 +2,10 @@
 * {
     border: none;
 
-    font-family: Font Awesome, Arial, MesloLGMDZ Nerd Font Propo, sans-serif;
+    /*font-family: Font Awesome, Arial, MesloLGMDZ Nerd Font Propo, sans-serif;*/
+    font-family: "Montserrat Regular", "MesloLGMDZ Nerd Font Propo";
     /*font-family: Font Awesome, Arial, CommitMono Nerd Font Propo, sans-serif;*/
-    font-size: 12px;
+    font-size: 12.2px;
     color: @text;
     border-radius: 20px;
 }
@@ -13,7 +14,7 @@ window {
 	/*font-weight: bold;*/
 }
 window#waybar {
-    background: rgba(0, 0, 0, 0);
+    background: transparent;
 }
 /*-----module groups----*/
 .modules-right {
@@ -25,11 +26,11 @@ window#waybar {
 }
 .modules-center {
 	background-color: @bg;
-    margin: 2px 12px 0 0;
+    margin: 2px 13px 0 0;
 }
-#clock {
+/*#clock {
   font-size: 13px;
-}
+}*/
 .modules-left {
 	background-color: @bg;
     margin: 2px 12px 0 2;
@@ -48,28 +49,44 @@ window#waybar {
 	background-color: rgba(0,0,0,0.6);
 }
 
+#log,
 #clock,
 #battery,
 #cpu,
 #memory,
 #temperature,
-#network,
+/*#network,*/
 #pulseaudio,
 #bluetooth
-#power-prles-daemon
+#power-profiles-daemon,
 #custom-media,
+#custom-lock,
 #tray,
 #mode,
 #window,
 #custom-music
 #custom-power,
-/*#custom-notification, */
+#custom-notification,
 #custom-appmenu,
 #idle_inhibitor {
-    padding: 0 9;
+    padding: 0 6;
 }
 #bluetooth {
-  padding: 3 5;
+  padding: 0 5;
+}
+#widget {
+  padding: 0 0;
+  margin: 0px;
+}
+#network {
+  /*margin: 0px;*/
+  padding: 0 5;
+}
+#power-profiles-daemon {
+  padding: 0 5;
+}
+#tray {
+  padding: 0 5;
 }
 #mode {
     color: @red;
@@ -104,6 +121,13 @@ window#waybar {
 #temperature.critical {
     color: @red;
 }
+#bluetooth.on {
+  color: @accent;
+}
+#bluetooth.connected {
+  color: @blue;
+}
+
 /*-----Colors----*/
 /*
  *rgba(0,85,102,1),#005566 --> Indigo(dye)
